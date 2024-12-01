@@ -1,0 +1,73 @@
+
+
+
+
+
+------------------------
+OTHER DATA Manipulations
+-------------------------
+
+1) Create Geographical hierarchy  Continent ---> Country ---> City
+
+Continent = SWITCH(TRUE(),
+                   DimContinent[CountryName]="India","Asia",
+                   DimContinent[CountryName]="Australia","Oceania",
+                   DimContinent[CountryName]="Brazil","SAM",
+                   DimContinent[CountryName]="Canada","NAM",
+                   DimContinent[CountryName]="Indonesia","Asia",
+                   DimContinent[CountryName]="Newzeland","Oceania",
+                   DimContinent[CountryName]="Phillipines","Asia",
+                   DimContinent[CountryName]="Qatar","Asia",
+                   DimContinent[CountryName]="Singapore","Asia",
+                   DimContinent[CountryName]="South Africa","Africa",
+                   DimContinent[CountryName]="Srilanka","Asia",
+                   DimContinent[CountryName]="Turkey","Europe",
+                   DimContinent[CountryName]="UAE","Asia",
+                   DimContinent[CountryName]="United Kingdom","Europe",
+                   DimContinent[CountryName]="United States","NAM"
+                   )
+
+-----------------------
+Using DAX
+-----------------------
+FactTable measures
+1)
+RatingColour = SWITCH(TRUE(),
+                       AND(FactKPIs[Aggregate rating]>=0,FactKPIs[Aggregate rating]<=1.7),"White",
+                       AND(FactKPIs[Aggregate rating]>=1.8,FactKPIs[Aggregate rating]<=2.4),"Red",
+                       AND(FactKPIs[Aggregate rating]>=2.5,FactKPIs[Aggregate rating]<=3.4),"Orange",
+                       AND(FactKPIs[Aggregate rating]>=3.5,FactKPIs[Aggregate rating]<=3.9),"Yellow",
+                       AND(FactKPIs[Aggregate rating]>=4,FactKPIs[Aggregate rating]<=4.4),"Green",
+                           FactKPIs[Aggregate rating]>=4.5,"Dark Green")
+
+2) 
+a) Restaurant Count = COUNT(FactTableKPIs[Restaurant ID])
+
+b) AverageCost = AVERAGE(FactTableKPIs[Average Cost for two])
+
+c) AverageRating = AVERAGE(FactTableKPIs[Aggregate rating])
+
+d) Cuisine Count = COUNT(DimZomatoContinent[Cuisines])
+
+3) Create a new column called “Continent” in the “Country Code” table
+
+Continent = SWITCH(TRUE(),
+                   DimCountry[Country]="India","Asia-India",
+                   DimCountry[Country]="Australia","Oceania-Australia",
+                   DimCountry[Country]="Brazil","SAM-Brazil",
+                   DimCountry[Country]="Canada","NAM-Canada",
+                   DimCountry[Country]="Indonesia","Asia-Indonesia",
+                   DimCountry[Country]="New zealand","Oceania-Newzeland",
+                   DimCountry[Country]="Phillipines","Asia-Phillipines",
+                   DimCountry[Country]="Qatar","Asia-Qatar",
+                   DimCountry[Country]="Singapore","Asia-Singapore",
+                   DimCountry[Country]="South Africa","Africa-South Africa",
+                   DimCountry[Country]="Sri lanka","Asia-Srilanka",
+                   DimCountry[Country]="Turkey","Europe-Turkey",
+                   DimCountry[Country]="UAE","Asia-UAE",
+                   DimCountry[Country]="United Kingdom","Europe-United Kingdom",
+                   DimCountry[Country]="United States","NAM-United States")
+
+
+
+
