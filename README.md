@@ -45,3 +45,34 @@ The report is divided into:
 - `data/`: Sample data files.
 - `DAX_Scripts.txt`: DAX calculations used in the project.
 - `screenshots/`: Report and visualization screenshots.
+
+## Screenshots
+## Dashboard Overview
+
+- [World Wide Analysis Dashboard] ![5](https://github.com/user-attachments/assets/56c5f937-931f-42ae-ab4d-6f5b5f03ac8c)
+
+- [Restaurant Analysis Report] ![6](https://github.com/user-attachments/assets/2c4b95ef-fca9-4fa4-b825-0882b2ca65ec)
+
+## Mobile Layouts
+
+![1](https://github.com/user-attachments/assets/7c8c45ff-4adf-4106-a437-47abf5634c84)
+
+![2](https://github.com/user-attachments/assets/d52b8675-3a3b-4489-8093-0929a863ec0f)
+
+![3](https://github.com/user-attachments/assets/eb9b2b8b-26cd-4a67-8dd6-3af25ded7931)
+
+![4](https://github.com/user-attachments/assets/be76605b-6966-4585-a69e-bbc9c6507174)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
